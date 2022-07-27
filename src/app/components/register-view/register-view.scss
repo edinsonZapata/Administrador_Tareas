@@ -3,6 +3,7 @@
 }
 .container-view-login{
     min-height: 100vh;
+    max-height: 700px;
     background-color: #dddd;    
 }
 
@@ -11,17 +12,29 @@
     width: 70%!important;
     height: 70%!important;
     max-width: 850px;
-    max-height: 500px;
+    max-height: 1200px;
 }
 
 .container-view-login-camp{
     background-color: #ddd;
     max-width: 850px;
-    max-height: 500px;
+    max-height: 900px;
     border-radius: 10px;
     padding: 2vh;
 }
 
 .form-control{
-    max-width: 210px;
+    width: 380px;
+}
+
+.campos{
+    display: flex;
+}
+
+.seccion1{
+    display: block;
+}
+
+.seccion2{
+    display: block;
 }

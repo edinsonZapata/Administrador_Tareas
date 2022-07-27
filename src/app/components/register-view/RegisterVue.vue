@@ -10,36 +10,36 @@
                 <img src="../img/logo-SmartSoft.png" class="mr-2" width="250" alt="Logo Smartsoft" />
               </div>
             </div>
-            <div class="row">
+            <div class="row campos">
               <div class="col-12 col-xl-8">
+              <div class="seccion1">
                 <div class="form group">
                   <label class="form-label">Nombre completo</label>
-                  <input type="text" class="form-control" id="nombre" />
+                  <input type="text" class="form-control" id="nombre"/>
                 </div>
-
                 <div class="form group">
                   <label class="form-label">Cédula</label>
-                  <input type="number" class="form-control" id="cedula" />
+                  <input type="text" class="form-control" id="cedula"/>
                 </div>
-
                 <div class="form group">
                   <label class="form-label">Correo electrónico</label>
-                  <input type="email" class="form-control" id="correo" />
+                  <input type="text" class="form-control" id="correo"/>
+                </div>
+                <div class="form group">
                 </div>
 
-                <div class="form group">
+                <div class="seccion2"> 
                   <label class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="password" />
+                  <input type="password" class="form-control" id="contraseña"/>
                 </div>
-                
                 <div class="form group">
-                  <label class="form-label">Confirma contraseña</label>
-                  <input type="password" class="form-control" id="conf-password" />
-                </div>
-
+                  <label class="form-label">Confirmar contraseña</label>
+                  <input type="password" class="form-control" id="conf-contraseña"/>
+                </div>     
+                </div>       
                 <div class="form group d-flex aling-items-center justify-content-start">
                   <input type="checkbox" class="form-check-input" id="" />
-                  <label for="" class="form-check-label">He leído y estoy de acuerdo con la política de privacidad y protección de datos personales de  SmartSoft Solutions S.A.S</label>
+                  <label for="" class="form-check-label">Recordar credenciales</label>
                 </div>
               </div>
               <div class="col-12 col-md-6 col-xl-8 ">
@@ -48,9 +48,9 @@
             </div>
             <div class="col h-100 aling-items-center justify-content-center text-center">
               <p>
-                ¿Ya tienes una cuenta?
+                ¿No tienes una cuenta?
                 <br />
-                <a href="">Iniciar Sesión</a>
+                <a href="./register-view/RegisterVue.vue" >Crear cuenta</a>
               </p>
             </div>
           </form>
