@@ -38,12 +38,12 @@
                 </div>
 
                 <div class="form group d-flex aling-items-center justify-content-start">
-                  <input type="checkbox" class="form-check-input" id="" />
+                  <input type="checkbox" class="form-check-input" id="termYcond" />
                   <label for="" class="form-check-label">He leído y estoy de acuerdo con la política de privacidad y protección de datos personales de  SmartSoft Solutions S.A.S</label>
                 </div>
               </div>
               <div class="col-12 col-md-6 col-xl-8 ">
-                <button type="submit" class="btn btn-primary h-100">Ingresar</button>
+                <button type="submit" class="btn btn-primary h-100">Registrarse</button>
             </div>
             </div>
             <div class="col h-100 aling-items-center justify-content-center text-center">
@@ -61,7 +61,7 @@
   </div>
 </template>
 
-<script src="register" lang="ts"></script>
+<script src="./registerVue.ts" lang="ts"></script>
 <style scoped lang="scss">
-@import "";
+@import "./register-view.scss";
 </style>
