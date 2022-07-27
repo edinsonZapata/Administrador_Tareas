@@ -61,7 +61,7 @@
   </div>
 </template>
 
-<script src="register" lang="ts"></script>
+<script src="./registerVue.ts" lang="ts"></script>
 <style scoped lang="scss">
-@import "";
+@import "./register-view.scss";
 </style>

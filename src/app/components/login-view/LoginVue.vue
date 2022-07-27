@@ -33,7 +33,7 @@
               <p>
                 ¿No tienes una cuenta?
                 <br />
-                <a href="">Crear cuenta</a>
+                <a href="./register-view/RegisterVue.vue" >Crear cuenta</a>
               </p>
             </div>
           </form>

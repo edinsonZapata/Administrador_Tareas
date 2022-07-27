@@ -3,8 +3,9 @@ import { VueWizard } from "@/vue-wizard";
 import $ from 'jquery'
 
 @Component({
-    name: 'login-view'
+    name: 'login-view',
 })
+
 export default class LoginView extends VueWizard {
     @Prop() public readonly saludo!: string;
 
