@@ -2,17 +2,20 @@
     display: flex!important;
 }
 .container-view-login{
-    min-height: 100vh;
-    max-height: 700px;
+    
+    min-height: 150vh;
+    max-height: 750px;
     background-color: #dddd;    
 }
 
 .container-view-login-data{
+    margin-top: 10%;
     background-color: #ffff;
     width: 70%!important;
     height: 70%!important;
     max-width: 850px;
     max-height: 1200px;
+    margin-bottom: 10%;
 }
 
 .container-view-login-camp{
@@ -21,6 +24,7 @@
     max-height: 900px;
     border-radius: 10px;
     padding: 2vh;
+    margin-bottom: 10%;
 }
 
 .form-control{
@@ -28,13 +32,18 @@
 }
 
 .campos{
-    display: flex;
+   display: flex;
+    
 }
 
 .seccion1{
     display: block;
+    
 }
 
 .seccion2{
+     
     display: block;
+    
+    
 }

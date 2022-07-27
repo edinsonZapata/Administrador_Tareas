@@ -27,11 +27,13 @@
                 </div>
                 <div class="form group">
                 </div>
-
+<section>
                 <div class="seccion2"> 
                   <label class="form-label">Contraseña</label>
                   <input type="password" class="form-control" id="contraseña"/>
+              
                 </div>
+                </section>
                 <div class="form group">
                   <label class="form-label">Confirmar contraseña</label>
                   <input type="password" class="form-control" id="conf-contraseña"/>
