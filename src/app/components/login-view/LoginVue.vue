@@ -8,7 +8,7 @@
             <div class="row aling-items-center justify-content-center mb-3">
               <div class="col d-flex aling-items-center justify-content">
                  <img
-                  src="../img/logo-SmartSoft.png" class="mr-2" width="250" alt="Logo Smartsoft" />
+                  src="@/assets/images/logo-SmartSoft.png" class="mr-2" width="250" alt="Logo Smartsoft" />
               </div>
             </div>
             <div class="row">

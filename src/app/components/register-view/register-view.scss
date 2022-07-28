@@ -2,28 +2,28 @@
     display: flex!important;
 }
 
-.container-view-login{
+.container-view-register{
     min-height: 100vh;
     background-color: #C0C2C8;    
     align-items: center;
 }
 
 @media(min-width: 768px){
-    .container-view-login-data{
+    .container-view-register-data{
         background-color: #ffff;
         align-items: center;
-        width: 90vh!important;
-        height: 78vh!important;
-        max-width: 100vh;
-        max-height: 100vh;
+        width: 900px!important;
+        height: 750px!important;
+        max-width: 900px;
+        max-height: 800px;
     }
 }
 
 @media(min-width: 576px){
-    .container-view-login-camp{
+    .container-view-register-camp{
         background-color: #ddd;
         max-width: 900px;
-        max-height: 600px;
+        max-height: 700px;
         border-radius: 10px;
         padding: 2vh;
     }
