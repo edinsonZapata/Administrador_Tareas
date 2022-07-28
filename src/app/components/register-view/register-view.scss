@@ -1,49 +1,30 @@
 .d-flex{
     display: flex!important;
 }
+
 .container-view-login{
-    
-    min-height: 150vh;
-    max-height: 750px;
-    background-color: #dddd;    
+    min-height: 100vh;
+    background-color: #C0C2C8;    
+    align-items: center;
 }
 
-.container-view-login-data{
-    margin-top: 10%;
-    background-color: #ffff;
-    width: 70%!important;
-    height: 70%!important;
-    max-width: 850px;
-    max-height: 1200px;
-    margin-bottom: 10%;
+@media(min-width: 768px){
+    .container-view-login-data{
+        background-color: #ffff;
+        align-items: center;
+        width: 90vh!important;
+        height: 78vh!important;
+        max-width: 100vh;
+        max-height: 100vh;
+    }
 }
 
-.container-view-login-camp{
-    background-color: #ddd;
-    max-width: 850px;
-    max-height: 900px;
-    border-radius: 10px;
-    padding: 2vh;
-    margin-bottom: 10%;
-}
-
-.form-control{
-    width: 380px;
-}
-
-.campos{
-   display: flex;
-    
-}
-
-.seccion1{
-    display: block;
-    
-}
-
-.seccion2{
-     
-    display: block;
-    
-    
+@media(min-width: 576px){
+    .container-view-login-camp{
+        background-color: #ddd;
+        max-width: 900px;
+        max-height: 600px;
+        border-radius: 10px;
+        padding: 2vh;
+    }
 }
