@@ -6,6 +6,7 @@
     background-color: #dddd;    
 }
 
+
 .container-view-login-data{
     background-color: #ffff;
     width: 70%!important;
@@ -20,6 +21,28 @@
     max-height: 500px;
     border-radius: 10px;
     padding: 2vh;
+}
+
+@media(min-width: 768px){
+    .container-view-register-data{
+        background-color: #ffff;
+        align-items: center;
+        width: 900px!important;
+        height: 780px!important;
+        max-width: 900px;
+        max-height: 800px;
+    }
+}
+
+@media(min-width: 576px){
+    .container-view-register-camp{
+        background-color: #ddd;
+        max-width: 900px;
+        max-height: 690px;
+        border-radius: 10px;
+        padding: 2vh;
+    }
+
 }
 
 .form-control{
