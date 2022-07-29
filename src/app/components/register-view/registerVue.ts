@@ -5,6 +5,7 @@ import $ from 'jquery'
 @Component({
     name: 'register-view'
 })
+
 export default class LoginView extends VueWizard {
     @Prop() public readonly saludo!: string;
 
@@ -26,3 +27,6 @@ export default class LoginView extends VueWizard {
         console.log("actualizar vista");
     }
 }
+
+export default class RegisterView extends VueWizard {}
+
