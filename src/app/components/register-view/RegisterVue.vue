@@ -16,16 +16,16 @@
             </div>
             <div class="row">
               <div class="col-12 col-xl-15">
-                <div class="form group p-2 mb-md-0 mr-md-1 onfirm-form-group p-3">
+                <div class="form group p-2 mb-md-0 mr-md-1 onfirm-form-group p-3 ">
                   <label class="form-label">Nombre completo</label>
                   <input type="text" class="form-control" id="nombre" />
                 </div>
-                <div class="mb-3 col-sm-12">
-                  <div class="d-flex flex-column flex-md-row aling-items-end p-2">
-                    <div class="form group p-3">
+                <div class="mb-3 col-sm-12 p-3">
+                  <div class="d-flex flex-column flex-md-row aling-items-end p-3">
+                    <div class="form group p-1">
                       <label>Tipo de documento:</label>
                     </div>
-                    <div class="form group p-2 col-sm-8">
+                    <div class="form group col-sm-8">
                       <select
                         class="form-select "
                         aria-label="Default select example"
@@ -50,6 +50,24 @@
                     <input type="text" class="form-control" id="correo" />
                   </div>
                 </div>
+
+                <div class="form group">
+                  <label class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="password" />
+                </div>
+                
+                <div class="form group">
+                  <label class="form-label">Confirma contraseña</label>
+                  <input type="password" class="form-control" id="conf-password" />
+                </div>
+
+                <div class="form group d-flex aling-items-center justify-content-start">
+                  <input type="checkbox" class="form-check-input" id="termYcond" />
+                  <label for="" class="form-check-label">He leído y estoy de acuerdo con la política de privacidad y protección de datos personales de  SmartSoft Solutions S.A.S</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-8 ">
+                <button type="submit" class="btn btn-primary h-100">Registrarse</button>
                 <div class="mb-3">
                   <div class="d-flex flex-column flex-md-row aling-items-end">
                     <div class="form group p-3 col-sm-6">
@@ -83,6 +101,7 @@
               <button type="submit" class="btn btn-primary h-100">
                 Ingresar
               </button>
+
             </div>
             </div>
 
@@ -99,3 +118,6 @@
 <style scoped lang="scss">
 @import "./register-view.scss";
 </style>
+
+
+
