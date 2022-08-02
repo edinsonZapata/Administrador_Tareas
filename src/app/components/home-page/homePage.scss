@@ -9,13 +9,14 @@
 
 
 .container-view-home-nav{
-    min-width: 100px;
-    min-height: 910px;
-    background-color: #fff;    
+    max-width: 250px;
+    min-height: 873px;
+    background-color: #343A40;    
+    color:  #fff;
 }
 
 .container-view-nav{
     width: 20pv;
-    height: 800px;
-    // background-color: $blue-900;
+    max-height: 200px;
+    background-color: #136A94;
 }
