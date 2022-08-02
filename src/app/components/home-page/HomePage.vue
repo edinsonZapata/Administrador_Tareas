@@ -123,15 +123,15 @@
                     </div>
 
                     <div class="card-body">
-                      <button></button>
+                      <button class="btn btn-outline-success">Editar</button>
                     </div>
                   </div>
                   <div class="card-group">                    
                     <div class="card-body borde">
                       <p class="card-text">Usuario_2</p>
                     </div>
-                    <div class="card-body">
-                        <button></button>
+                    <div class="card-body ">
+                        <button class="btn btn-outline-success">Editar</button>
                     </div>
                   </div>
                 </div>
