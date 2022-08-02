@@ -1,6 +1,7 @@
 .d-flex{
     display: flex!important;
 }
+<<<<<<< Updated upstream
 .container-view-login{
     
     min-height: 150vh;
@@ -29,3 +30,31 @@
 
 
 
+=======
+
+.container-view-register{
+    min-height: 100vh;
+    background-color: #C0C2C8;    
+    align-items: center;
+}
+
+@media(min-width: 768px){
+    .container-view-register-data{
+        background-color: #ffff;
+        align-items: center;
+        width: 900px!important;
+        height: 750px!important;
+        max-width: 900px;
+        max-height: 800px;
+    }
+}
+@media(min-width: 576px){
+    .container-view-register-camp{
+        background-color: #ddd;
+        max-width: 900px;
+        max-height: 700px;
+        border-radius: 10px;
+        padding: 2vh;
+    }
+}
+>>>>>>> Stashed changes
