@@ -12,8 +12,11 @@ export default class HomePage extends VueWizard {
     public openModalCloseSesion: boolean = false;
     public editUser: boolean = false;
 
-    showModalWindow(){
+    showModalWindowCloseSesion(){
         this.openModalCloseSesion = !this.openModalCloseSesion;
     }
 
+    showModalWindowEditUser(){
+        this.editUser = !this.editUser;
+    }
 }

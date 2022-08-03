@@ -21,7 +21,6 @@
                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
               />
             </svg>
-            <!-- <img src="" alt-width="32" height="32" class="rounded-circle me-2"> -->
           </a>
         </div>
         <div class="collapse navbar-collapse" id="">
@@ -29,7 +28,7 @@
           <a class="navbar-brand text-white" href="">UsuarioAdmin</a>
         </div>
         <div action="" class="d-flex p-3">
-          <a @click="showModalWindow" class="navbar-brand text-white">Cerrar sesion</a>
+          <a @click="showModalWindowCloseSesion" class="navbar-brand text-white">Cerrar sesion</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-power mb-3 text-white" viewBox="0 0 16 16">
             <path d="M7.5 1v7h1V1h-1z" />
             <path
@@ -54,7 +53,7 @@
                 <button class="btn col-lg-12 btn-success mr-2">Aceptar</button>  
               </div>
               <div class="col-6">
-                <button @click="showModalWindow" class="btn col-lg-12 btn-secondary mr-2 ">Volver</button>
+                <button @click="showModalWindowCloseSesion" class="btn col-lg-12 btn-secondary mr-2 ">Volver</button>
               </div>              
             </div>
           </div>
@@ -67,7 +66,7 @@
               <h5 class="text-white">Editar perfil</h5>
               <button type="button" class="btn-close text-white" aria-label="Close"></button>
             </div>
-            <div class="modal-body row aling-content-center justify-content-center  col-8 m-2">
+            <div class="modal-body row aling-content-center justify-content-center  col-12 m-2">
               <p>Nombre</p>
               <input class="form-control" type="text">
               <p>Contraseña</p>
@@ -79,7 +78,7 @@
                 <button class="btn col-lg-12 btn-success mr-2">Aceptar</button>  
               </div>
               <div class="col-5">
-                <button @click="showModalWindow" class="btn col-lg-12 btn-secondary mr-2 ">Volver</button>
+                <button @click="showModalWindowEditUser" class="btn col-lg-12 btn-secondary mr-2 ">Volver</button>
               </div> 
             </div>
           </div>
@@ -95,8 +94,6 @@
                 <button
                   class="btn btn-toggle align-items-center rounded collapsed col-12 text-white"
                 >
-                  <!-- <svg class="bi me-2" width="16" height="16" >
-                <use xlink:href="#home"></use></svg>  -->
                   Pagina inicio
                 </button>
               </li>
@@ -159,21 +156,21 @@
                     <h5>Agentes conectados</h5>
                   </div>
                   <table class="table m-0 justify-content-center">
-                    <!-- <thead class="">
+                    <thead class="">
                       <th ># Usuarios</th>
                       <th>Nombre</th>
                       <th>Editar</th>
-                    </thead> -->
+                    </thead>
                     <tbody class="">
                       <tr>
                         <th scope="row">1</th>
                         <td>Usuario_1</td>
-                        <td><button @click="showModalWindow " class="btn btn-primary ">Editar</button></td>
+                        <td><button @click="showModalWindowEditUser " class="btn btn-primary ">Editar</button></td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>Usuario_2</td>
-                        <td><button @click="showModalWindow" class="btn btn-primary ">Editar</button></td>
+                        <td><button @click="showModalWindowEditUser" class="btn btn-primary ">Editar</button></td>
                       </tr>
                     </tbody>
                   </table>
@@ -194,13 +191,6 @@
     </div>
   </div>
 </template>
-<!-- <template class="Router">
-  <div v-if="open" class="modal">
-     <div class="card-header">
-        <p>Cerrar sesion</p>
-     </div>
-  </div>
-</template> -->
 <script src="./homePage.ts" lang="ts">
 </script>
 <style scoped lang="scss">
