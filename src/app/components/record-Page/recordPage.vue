@@ -25,6 +25,7 @@
             <path
               d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z" />
           </svg>
+
         </div>
       </nav>
       <div class="d-flex router-view-container">
@@ -35,6 +36,7 @@
                 <button class="btn btn-toggle align-items-center rounded collapsed col-12 text-black">
                   <!-- <svg class="bi me-2" width="16" height="16" >
                 <use xlink:href="#home"></use></svg>  -->
+
                   Inicio
                 </button>
               </li>
@@ -63,17 +65,27 @@
               <div class="modal-content info-modal"></div>
             </div>
           </div>
-          <div class="container-fluid my-2">
+          <div class="container-fluid my-5">
             <h3>Historial</h3>
           </div>
           <div class="row">
+            
 
-            <div class="col-10 m-5">
+            <div class="col-25 m-5">
               <div class="">
                 <div class="card shadow-sm">
-                  <div class="card-header p-4">
-                    <table class="table table-bordered">
-                      <thead class="thead-dark">
+                  <div class="card-header p-5">
+                    
+                    
+                    <table class="table table-bordered border-0">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+            class=" icon5 bi bi-power mb-5  text-dark" viewBox="0 0 16 16">
+            <path d="M7.5 1v7h1V1h-1z" />
+            <path
+              d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z" />
+          </svg>
+
+                      <thead class="thead-dark bg-dark text-white">
                         <tr>
                           <th scope="col">Tema</th>
                           <th scope="col">Descripcion</th>
@@ -84,9 +96,13 @@
                           <th scope="col">Encargados</th>
 
                         </tr>
+                        
                       </thead>
+                      
                       <tbody>
+                       
                         <tr>
+
                           <th scope="row"></th>
                           <td></td>
                           <td></td>
@@ -115,22 +131,12 @@
                           <td></td>
 
                         </tr>
-                         <tr>
-                          <th scope="row"></th>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          
-                        </tr>
                         <tr>
                           <th scope="row"></th>
                           <td></td>
                           <td></td>
                           <td></td>
-                          
+                          <td></td>
                           <td></td>
                           <td></td>
 
@@ -139,13 +145,24 @@
                           <th scope="row"></th>
                           <td></td>
                           <td></td>
-                          
+                          <td></td>
+
+                          <td></td>
+                          <td></td>
+
+                        </tr>
+                        <tr>
+                          <th scope="row"></th>
+                          <td></td>
+                          <td></td>
+
+
 
                           <th scope="row"></th>
                           <td></td>
                           <td></td>
                           <td></td>
-                          
+
 
                         </tr>
                       </tbody>
@@ -154,17 +171,17 @@
                 </div>
               </div>
             </div>
-            <div class="container-fluid my-2">
+            <div class="container-fluid text-gray">
               <h3>Ultimos cambios</h3>
             </div>
 
 
-            <div class="col-10 m-5">
+            <div class="col-25 m-5">
               <div class="">
                 <div class="card shadow-sm">
-                  <div class="card-header p-2">
-                    <table class="table table-bordered">
-                      <thead class="thead-dark">
+                  <div class="card-header p-5">
+                    <table class="table table-bordered border-0">
+                      <thead class="thead-dark bg-dark text-white">
                         <tr>
                           <th scope="col">Tema</th>
                           <th scope="col">Descripcion</th>
