@@ -1,10 +1,12 @@
 import { Component, Prop } from "vue-property-decorator";
 import { VueWizard } from "@/vue-wizard";
+import RegisterView from "@/app/components/register-view/RegisterVue.vue"
 import $ from 'jquery'
 
 @Component({
-    name: 'login-view'
+    name: 'login-view',
 })
+
 export default class LoginView extends VueWizard {
     @Prop() public readonly saludo!: string;
 

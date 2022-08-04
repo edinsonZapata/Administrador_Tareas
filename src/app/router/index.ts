@@ -8,12 +8,6 @@ const AppRegister = () => import("../components/register-view/RegisterVue.vue");
 
 const AdminMain = () => import("../components/home-page/HomePage.vue");
 
-<<<<<<< Updated upstream
-const Adminrecord = () => import("../components/record-page/recordPage.vue");
-=======
-const Adminrecord = () => import("../components/record-Page/recordPage.vue");
->>>>>>> Stashed changes
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -37,19 +31,8 @@ const routes = [
     path:"/app",
     name:"admin",
     component:AdminMain
-},
-{
-    path:"/record",
-    name:"admin",
-    component:Adminrecord
-}
-,{
-    path:"/record",
-    name:"admin",
-    component:Adminrecord
 }
 ] 
-
 
 const router = new VueRouter({mode: "history", routes});
 
