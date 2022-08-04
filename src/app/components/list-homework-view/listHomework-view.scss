@@ -2,6 +2,20 @@
     display: flex;
 }
 
+.d-block{
+    display:block
+}
+
+.mr-40{
+    margin-right: 40% !important;
+}
+
+
+
+.foo {
+    outline: 1px solid rgb(116, 115, 115);
+}
+
 .container-view-home{
     min-height: 100vh;
     background-color: #C0C2C8;    
@@ -9,13 +23,14 @@
 
 
 .container-view-home-nav{
-    min-width: 100px;
-    min-height: 910px;
-    background-color: #fff;    
+    max-width: 250px;
+    min-height: 873px;
+    background-color: #343A40;    
+    color:  #fff;
 }
 
 .container-view-nav{
     width: 20pv;
-    height: 800px;
-    // background-color: $blue-900;
+    max-height: 200px;
+    background-color: #136A94;
 }
