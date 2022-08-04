@@ -8,7 +8,9 @@ const AppRegister = () => import("../components/register-view/RegisterVue.vue");
 
 const AdminMain = () => import("../components/home-page/HomePage.vue");
 
-const Adminrecord = () => import("../components/record-Page/recordPage.vue");
+const AdminList = () => import("../components/list-homework-view/ListHomework.vue");
+
+const AdminCreate = () => import("../components/create-homework-view/CreateHomework.vue");
 
 Vue.use(VueRouter);
 
@@ -33,11 +35,16 @@ const routes = [
     path:"/app",
     name:"admin",
     component:AdminMain
-}
-,{
-    path:"/record",
+},
+{
+    path:"/listhomework",
     name:"admin",
-    component:Adminrecord
+    component: AdminList,
+},
+{
+    path:"/createhomework",
+    name:"admin",
+    component: AdminCreate,
 }
 ] 
 
