@@ -91,17 +91,17 @@
                
             <main class="col-md-9 ml-sm-auto col-lg-10 px-md-5 main-manager">
                 <div class="d-flex mb-5">
-                    <button type="button" class="btn btn-primary mr-40  mt-auto m-5 p-4 h-50 d-inline-block">Crear Tarea</button>
+                    <button type="button" class="btn btn-primary mr-40  mt-auto m-5 p-4 h-50 d-inline-block" href="../create-homework-view/CreateHomework.vue">Crear Tarea</button>
                     
                     <div class="col-4 m-3">
                         <div class="">
                             <div class="card shadow-sm justify-content-center">
-                                <div class="card-group ">
-                                    <div class="card-body borde foo col" >
-                                    <p class="card-text text-center">Resuelta</p>
+                                <div class="card-group">
+                                    <div class="card-body borde foo" style="width: 120px">
+                                    <p class="card-text ">Resuelta</p>
                                     </div>
 
-                                    <div class="card-body foo">
+                                    <div class="card-body foo ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check2-circle text-center" viewBox="0 0 16 16">
                                             <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
                                             <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="card-group">                    
                                     <div class="card-body borde foo">
-                                    <p class="card-text text-center">Pendiente</p>
+                                    <p class="card-text " style="width: 88px">Pendiente</p>
                                     </div>
                                     <div class="card-body foo">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-exclamation-circle " viewBox="0 0 16 16">
