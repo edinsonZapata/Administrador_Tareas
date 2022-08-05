@@ -12,6 +12,9 @@ const AdminList = () => import("../components/list-homework-view/ListHomework.vu
 
 const AdminCreate = () => import("../components/create-homework-view/CreateHomework.vue");
 
+
+const AdminEdit = () => import("../components/edit-homework-view/EditHomework.vue");
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -45,6 +48,11 @@ const routes = [
     path:"/createhomework",
     name:"admin",
     component: AdminCreate,
+},
+{
+    path:"/edithomework",
+    name:"admin",
+    component: AdminEdit,
 }
 ] 
 
