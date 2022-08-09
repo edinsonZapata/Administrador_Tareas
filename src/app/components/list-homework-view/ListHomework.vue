@@ -310,18 +310,20 @@
                 </nav>
                 <main class="col-md-9 ml-sm-auto col-lg-10 px-md-5 main-manager">
                     <div class="d-flex mb-5">
-                        <button @click="showModalWindowCreateHomework" type="button" class="btn btn-primary margin-right-40  mt-auto m-5 p-4 h-50 d-inline-block"
-                           >Crear Tarea</button>
+                        <div class=" d-flex align-items-center col-8">
+                            <button @click="showModalWindowCreateHomework" type="button" class="btn btn-primary mx-0 p-4 h-50"
+                            >Crear Tarea</button>
+                        </div>
 
                         <div class="col-4 m-3">
                             <div class="">
                                 <div class="card shadow-sm justify-content-center">
                                     <div class="card-group">
-                                        <div class="card-body borde border-color-size" style="width: 120px">
+                                        <div class="card-body border-bottom-0 border border-secondary" style="width: 120px">
                                             <p class="card-text ">Resuelta</p>
                                         </div>
 
-                                        <div class="card-body border-color-size ">
+                                        <div class="card-body border-start-0 border border-secondary border-bottom-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
                                                 fill="currentColor" class="bi bi-check2-circle text-center"
                                                 viewBox="0 0 16 16">
@@ -333,10 +335,10 @@
                                         </div>
                                     </div>
                                     <div class="card-group">
-                                        <div class="card-body borde border-color-size">
+                                        <div class="card-body border-end-0 border border-secondary ">
                                             <p class="card-text " style="width: 88px">Pendiente</p>
                                         </div>
-                                        <div class="card-body border-color-size">
+                                        <div class="card-body border border-secondary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
                                                 fill="currentColor" class="bi bi-exclamation-circle "
                                                 viewBox="0 0 16 16">
