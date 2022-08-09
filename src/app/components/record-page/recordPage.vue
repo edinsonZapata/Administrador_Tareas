@@ -32,7 +32,7 @@
         <nav class="d-flex flex-column flex-shrink-0 p-3 col-md-3 col-lg-2 sticky-top container-view-home-nav">
           <div class="sidebar-sticky pt-3">
             <ul class="nav flex-column">
-              <li class=" container1 nav-item mb-4">
+              <li class=" nav-item mb-4">
                 <button class="btn btn-toggle align-items-center rounded collapsed col-12 text-black">
                   <!-- <svg class="bi me-2" width="16" height="16" >
                 <use xlink:href="#home"></use></svg>  -->
@@ -40,7 +40,7 @@
                   Inicio
                 </button>
               </li>
-              <li class=" container2 nav-item mb-4">
+              <li class=" nav-item mb-4">
                 <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 m-10 text-black">
                   Lista de tareas
                 </buttom>
