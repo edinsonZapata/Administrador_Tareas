@@ -34,9 +34,6 @@
             <ul class="nav flex-column">
               <li class=" nav-item mb-4">
                 <button class="btn btn-toggle align-items-center rounded collapsed col-12 text-black">
-                  <!-- <svg class="bi me-2" width="16" height="16" >
-                <use xlink:href="#home"></use></svg>  -->
-
                   Inicio
                 </button>
               </li>
@@ -68,17 +65,11 @@
           <div class="container-fluid my-5">
             <h3>Historial</h3>
           </div>
-
-        
-            
-
             <div class="col-12 m-3">
               <div class="">
                 <div class="card shadow-sm">
                   <div class="card-header p-5">
-                
                     <table class="table  table-striped  border-0"> 
-                     
                       <thead class="text-white">
                         <tr class ="table-active">
                           <th scope="col">Tema</th>
@@ -88,18 +79,11 @@
                           <th scope="col">Valoracion</th>
                           <th scope="col">Tiempo Estimado</th>
                           <th scope="col">Encargados</th>
-
-                        </tr>
-                        
-                      </thead>
-                      
-                      <tbody>
-                     
-                        <tr>
-
-                          
-                          <th scope="row"></th>
-                          
+                        </tr>                       
+                      </thead>                    
+                      <tbody>                   
+                        <tr>                        
+                          <th scope="row"></th>                        
                           <td></td>
                           <td></td>
                           <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
@@ -127,7 +111,6 @@
   <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
   <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
 </svg></button> </td>
-
                         </tr>
                         <tr>
                           <th scope="row"></th>
@@ -141,7 +124,6 @@
   <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
   <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
 </svg></button> </td>
-
                         </tr>
                         <tr>
                           <th scope="row"></th>
@@ -168,15 +150,11 @@
   <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
   <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
 </svg></button> </td>
-                        </tr>
-                        
+                        </tr>                       
                         <tr>
-                          <th scope="row"></th>
-                          
+                          <th scope="row"></th>                         
                           <td></td>
                           <td></td>
-
-
                           <th scope="row"></th>
                           <td></td>
                           <td></td>
@@ -198,16 +176,12 @@
               <h3>Ultimos cambios</h3>
             </div>
             
-          <div class="row">
-            
-
+          <div class="row">           
             <div class="col-20 m-3">
               <div class="">
                 <div class="card shadow-sm">
-                  <div class="card-header p-5">
-                
-                    <table class="table table-striped border-0"> 
-                     
+                  <div class="card-header p-5">               
+                    <table class="table table-striped border-0">                     
                       <thead class="text-white">
                         <tr class =" table-active">
                           <th scope="col">Tema</th>
@@ -217,16 +191,11 @@
                           <th scope="col">Valoracion</th>
                           <th scope="col">Tiempo Estimado</th>
                           <th scope="col">Encargados</th>
-
                         </tr>
                         
-                      </thead>
-                      
-                      <tbody>
-                     
-                        <tr>
-
-                          
+                      </thead>                     
+                      <tbody>                     
+                        <tr>                         
                           <th scope="row"></th>
                           
                           <td></td>
@@ -319,11 +288,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-            
-
-
-           
+            </div>          
           </div>
           <div class=""></div>
         </main>
