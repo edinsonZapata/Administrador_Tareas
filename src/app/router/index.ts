@@ -8,6 +8,8 @@ const AppRegister = () => import("../components/register-view/RegisterVue.vue");
 
 const AdminMain = () => import("../components/home-page/HomePage.vue");
 
+const settingPage = () => import("../components/Settings/settingPage.vue");
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -31,6 +33,11 @@ const routes = [
     path:"/app",
     name:"admin",
     component:AdminMain
+},
+{
+    path:"/setting",
+    name:"setting",
+    component:settingPage
 }
 ] 
 

@@ -28,25 +28,20 @@
           <a class="navbar-brand text-white" href="">UsuarioAdmin</a>
         </div>
         <div action="" class="d-flex p-3">
-          <a @click="showModalWindowCloseSesion" class="navbar-brand text-white">Cerrar sesion</a>
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-power mb-3 text-white" viewBox="0 0 16 16">
-            <path d="M7.5 1v7h1V1h-1z" />
-            <path
-              d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"
-            />
-          </svg>
+          <a @click="showModalWindowCloseSesion"  class="navbar-brand text-white">Cerrar sesion
+          <icon :icon="['fas ', 'fa-door-open']"  width="35" height="35"/></a>          
         </div>
         <div>
           <MyModal/>
         </div> 
       </nav>
-      <!--  modal   -->
+      <!--  modal cerrar sesion  -->
       <div v-if="openModalCloseSesion" class="modal fade show" style="padding-right: 17px; display:block" data-bs-backdrop="static" data-bs-keyboard="false" arial-modal="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header bg-dark">
               <h5 class="modal-title text-white">¿Desea cerrar sesion?</h5>
-              <button type="button" class="btn-close text-white" aria-label="Close"></button>
+              <button @click="showModalWindowCloseSesion" type="button" class="btn-close text-white" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center row m-2">
               <div class="col-6 justify-content-center">
@@ -59,21 +54,22 @@
           </div>
         </div>
       </div>
+      <!--modal editar usuario-->
       <div v-if="editUser" class="d-flex modal fade show" style="padding-right: 17px; display:block" data-bs-backdrop="static" data-bs-keyboard="false" arial-modal="true">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header bg-dark">
+          <div class="modal-content d-flex justify-content-center aling-items-center">
+            <div class="modal-header bg-dark ">
               <h5 class="text-white">Editar perfil</h5>
-              <button type="button" class="btn-close text-white" aria-label="Close"></button>
+              <button @click="showModalWindowEditUser" type="button" class="btn-close text-white" aria-label="Close"></button>
             </div>
-            <div class="modal-body row aling-content-center justify-content-center  col-12 m-2">
-              <p>Nombre</p>
-              <input class="form-control" type="text">
-              <p>Contraseña</p>
-              <input class="form-control" type="text">
-              <p>Estado</p>
+            <div class="modal-body m-2 ">
+              <p class="p-2">Nombre</p>
+              <input class="form-control  mr-2" type="text">
+              <p class="p-2">Contraseña</p>
+              <input class="form-control mr-2" type="text">
+              <p class="p-2">Estado</p>
             </div>
-            <div class="modal-footer aling-items-center m-2">
+            <div class="modal-footer justify-content-center aling-items-center m-2">
               <div class="col-5">
                 <button class="btn col-lg-12 btn-success mr-2">Aceptar</button>  
               </div>
@@ -91,32 +87,32 @@
           <div class="sidebar-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item mb-4">
-                <button
-                  class="btn btn-toggle align-items-center rounded collapsed col-12 text-white"
-                >
+                <a
+                  class="btn btn-toggle align-items-center rounded collapsed col-12 text-white active" 
+                ><icon :icon="['fas', 'fa-house']"/>
                   Pagina inicio
-                </button>
+                </a>
               </li>
               <li class="nav-item mb-4">
-                <buttom
-                  class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white"
-                >
+                <a 
+                  class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white"  href="../list-homework"
+                ><icon icon="fa-solid fa-clipboard-list" class="mg-3"/>
                   Lista de tareas
-                </buttom>
+                </a>
               </li>
               <li class="nav-item mb-4">
-                <buttom
-                  class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white"
-                >
+                <a
+                  class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white " href="record"
+                ><icon icon="fa-solid fa-business-time" />
                   Historial
-                </buttom>
+                </a>
               </li>
               <li class="nav-item mb-4">
-                <buttom
-                  class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white"
-                >
+                <a
+                  class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white" href="../setting"
+                ><icon icon="fa-solid fa-gear" />
                   Configuracion
-                </buttom>
+                </a>                
               </li>
               <li></li>
             </ul>
@@ -159,18 +155,22 @@
                     <thead class="">
                       <th ># Usuarios</th>
                       <th>Nombre</th>
+                      <th>Estado</th>
                       <th>Editar</th>
                     </thead>
                     <tbody class="">
                       <tr>
                         <th scope="row">1</th>
                         <td>Usuario_1</td>
-                        <td><button @click="showModalWindowEditUser " class="btn btn-primary ">Editar</button></td>
+                        <td></td>
+                        <td><button @click="showModalWindowEditUser " class="btn btn-primary "><icon :icon="['fas', 'fa-pen-to-square']"/> Editar</button>
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>Usuario_2</td>
-                        <td><button @click="showModalWindowEditUser" class="btn btn-primary ">Editar</button></td>
+                        <td></td>
+                        <td><button @click="showModalWindowEditUser" class="btn btn-primary "><icon :icon="['fas', 'fa-pen-to-square']"/> Editar</button></td>
                       </tr>
                     </tbody>
                   </table>
@@ -184,6 +184,7 @@
               <div class="card-text w-50 h-50"></div>
               </dvi>
             </div>
+            <el-tag v-permission="['']"></el-tag>
           </div>
           <div class=""></div>
         </main>

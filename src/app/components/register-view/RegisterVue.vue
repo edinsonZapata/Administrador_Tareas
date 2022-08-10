@@ -92,6 +92,8 @@
                     de SmartSoft Solution S.A.S.
                   </label>
                   <link rel="stylesheet" href="" />
+
+                  <label for="" class="form-label text-center"><a href="../login">Prefiero iniciar sesión</a></label>
                 </div>
                 <div class="col-12 col-md-6 col-xl-8 p-3">
                   <button type="submit" class="btn btn-primary h-100">
