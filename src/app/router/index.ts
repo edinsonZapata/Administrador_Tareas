@@ -10,6 +10,8 @@ const AdminMain = () => import("../components/home-page/HomePage.vue");
 
 const settingPage = () => import("../components/Settings/settingPage.vue");
 
+const AdminList = () => import("../components/list-homework-view/ListHomework.vue");
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -33,6 +35,11 @@ const routes = [
     path:"/app",
     name:"admin",
     component:AdminMain
+},
+{
+    path:"/listhomework",
+    name:"admin",
+    component: AdminList
 },
 {
     path:"/setting",
