@@ -8,6 +8,8 @@ const AppRegister = () => import("../components/register-view/RegisterVue.vue");
 
 const AdminMain = () => import("../components/home-page/HomePage.vue");
 
+const settingPage = () => import("../components/Settings/settingPage.vue");
+
 const AdminList = () => import("../components/list-homework-view/ListHomework.vue");
 
 Vue.use(VueRouter);
@@ -37,7 +39,12 @@ const routes = [
 {
     path:"/listhomework",
     name:"admin",
-    component: AdminList,
+    component: AdminList
+},
+{
+    path:"/setting",
+    name:"setting",
+    component:settingPage
 }
 ] 
 
