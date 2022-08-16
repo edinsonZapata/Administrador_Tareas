@@ -1,5 +1,6 @@
 import { Component, Prop } from "vue-property-decorator";
 import { VueWizard } from "@/vue-wizard";
+import { store, storeTypes } from "@/app/store";
 import $ from 'jquery';
 
 @Component({
@@ -7,20 +8,27 @@ import $ from 'jquery';
 })
 
 export default class ListHomework extends VueWizard {
-
     public openModalCreateHomework: boolean = false;
+    public openModalEditHomework: boolean = false;
+    public openModalDeleteHomework: boolean = false;
+    public tasks: any[] = []
+
+    async mounted(): Promise<any> {
+        await store.dispatch(storeTypes.tasks.actions.getAllTasks())
+        .then((tasks: any) => {
+            if(store.state.tasks){
+                this.tasks = store.state.tasks?.tasks;
+            }
+        })
+    }
 
     showModalWindowCreateHomework(){
         this.openModalCreateHomework = !this.openModalCreateHomework;
     }
 
-    public openModalEditHomework: boolean = false;
-
     showModalWindowEditHomework(){
         this.openModalEditHomework = !this.openModalEditHomework;
     }
-
-    public openModalDeleteHomework: boolean = false;
 
     showModalWindowDeleteHomework(){
         this.openModalDeleteHomework = !this.openModalDeleteHomework;
