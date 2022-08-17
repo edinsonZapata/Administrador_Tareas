@@ -12,6 +12,8 @@ const settingPage = () => import("../components/Settings/settingPage.vue");
 
 const AdminList = () => import("../components/list-homework-view/ListHomework.vue");
 
+const Modals = () => import("../components/modals-vue/ModalsHomework.vue");
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -38,13 +40,18 @@ const routes = [
 },
 {
     path:"/listhomework",
-    name:"admin",
+    name:"list",
     component: AdminList
 },
 {
     path:"/setting",
     name:"setting",
     component:settingPage
+},
+{
+    path:"/modals",
+    name:"modals",
+    component:Modals 
 }
 ] 
 

@@ -1,17 +1,14 @@
 import { Component, Prop } from "vue-property-decorator";
 import { VueWizard } from "@/vue-wizard";
 import { store, storeTypes } from "@/app/store";
-
 import $ from 'jquery';
 
 @Component({
-    name: 'listHomework',
+    name: 'modals',
 })
 
-
-
-export default class ListHomework extends VueWizard {
-    public openModalCreateHomework: boolean = true;
+export default class modals extends VueWizard {
+    public openModalCreateHomework: boolean = false;
     public openModalEditHomework: boolean = false;
     public openModalDeleteHomework: boolean = false;
     public tasks: any[] = []
@@ -37,4 +34,3 @@ export default class ListHomework extends VueWizard {
         this.openModalDeleteHomework = !this.openModalDeleteHomework;
     }
 }
-
