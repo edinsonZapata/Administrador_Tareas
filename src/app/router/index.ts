@@ -12,6 +12,8 @@ const settingPage = () => import("../components/Settings/settingPage.vue");
 
 const AdminList = () => import("../components/list-homework-view/ListHomework.vue");
 
+const Adminrecord = () => import("../components/record-Page/RecordPage.vue");
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -45,6 +47,11 @@ const routes = [
     path:"/setting",
     name:"setting",
     component:settingPage
+},
+{
+    path:"/records",
+    name:"record",
+    component:Adminrecord
 }
 ] 
 
