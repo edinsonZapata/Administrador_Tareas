@@ -57,8 +57,7 @@
     ],
     "parserOptions": {
       "parser": "@typescript-eslint/parser"
-    },
-    "rules": {}
+    }    
   },
   "browserslist": [
     "> 1%",

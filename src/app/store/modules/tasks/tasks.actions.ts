@@ -7,12 +7,14 @@ import Axios, { AxiosRequestConfig } from "axios";
 
 export interface TasksActions{
     getAllTasks: undefined,
-    getOneTask: string
+    getOneTask: string,
+    postOneTask: undefined
 }
 
 export const tasksActionsActionsTypes: DefineTypes<TasksActions> = {
     getAllTasks: payload => ({type: "getAllTasks"}),
-    getOneTask: payload => ({type: "getOneTask", payload})
+    getOneTask: payload => ({type: "getOneTask", payload}),
+    postOneTask: payload => ({type: "postOneTask"})
 }
 
 const actions: DefineActions<TasksActions, TasksState, RootState> ={
@@ -39,6 +41,21 @@ const actions: DefineActions<TasksActions, TasksState, RootState> ={
             return new Promise((resolve,reject) => reject(err));
         }
 
+    },
+    async postOneTask({commit}){
+        try{
+            //const { projectId, bussinesStatus } = payload;
+            const url = `${BASE_URL_MANAGER}/tasks`;
+
+            const res = await Axios.post(url);
+
+            if(res.data){
+                commit(tasksMutationsTypes.setTasks(res.data))
+            }
+
+        }catch(err){
+            return new Promise((resolve,reject) => reject(err));
+        }
     }
 }
 

@@ -124,7 +124,7 @@
                             </thead>
                             <tbody>
                                 <tr class="table-light" v-for="(task, index) of tasks" :key="index">
-                                    <th scope="row">{{task.theme}}</th>
+                                    <th scope="row">{{task.theme}} </th>
                                     <td>{{task.description}}</td>
                                     <td>1</td>
                                     <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"

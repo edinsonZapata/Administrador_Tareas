@@ -1,11 +1,18 @@
 import { Component, Prop } from "vue-property-decorator";
 import { VueWizard } from "@/vue-wizard";
 import { store, storeTypes } from "@/app/store";
+import { ref } from 'vue';
+import { tasks } from "@/app/store/modules/tasks";
 import $ from 'jquery';
 
-@Component({
-    name: 'modals',
-})
+
+    defineProps({
+        modelValue: String
+      })                                                                                                                                                                                                                                                                                
+
+    @Component({
+        name: 'modals',
+    })
 
 export default class modals extends VueWizard {
     public openModalCreateHomework: boolean = false;
@@ -13,8 +20,10 @@ export default class modals extends VueWizard {
     public openModalDeleteHomework: boolean = false;
     public tasks: any[] = []
 
+    
+
     async mounted(): Promise<any> {
-        await store.dispatch(storeTypes.tasks.actions.getAllTasks())
+        await store.dispatch(storeTypes.tasks.actions.postOneTask())
         .then((tasks: any) => {
             if(store.state.tasks){
                 this.tasks = store.state.tasks?.tasks;
