@@ -1,4 +1,5 @@
 export enum StatusTask {
     EARRING = 'EARRING',
-    RESOLVED = 'RESOLVED'
+    RESOLVED = 'RESOLVED',
+    REMOVED = 'REMOVED',
 }

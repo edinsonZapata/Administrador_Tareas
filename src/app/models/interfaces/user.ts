@@ -1,11 +1,6 @@
-export enum UserRole {
-    AGENT = "AGENT",
-    ADMIN = "ADMIN",
-    BASE = "BASE",
-}
+import { UserRole } from "../../enums";
 
-
-export interface User {
+export interface Users {
     _id: string;
     password?: string;
     username?: string;
