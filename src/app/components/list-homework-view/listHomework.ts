@@ -1,29 +1,32 @@
-import { Component, Prop } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import { VueWizard } from "@/vue-wizard";
 import { store, storeTypes } from "@/app/store";
-import { ref } from 'vue';
-import { tasks } from "@/app/store/modules/tasks";
-import  modalsHomework  from "../modals-vue/ModalsHomework.vue";
+import { ref } from 'vue'
+import modals from "../modals/modals-view.vue";
 import $ from 'jquery';
 
-const theme = ref(tasks)
-    const description = ref('')
-    const priority = ref('')
-    const status = ref('')
-    const assmesent = ref('')
-    const estimatedTime = ref('')
+const _ = require("lodash");
 
 @Component({
     name: 'listHomework',
+    components: { modals},
+    methods: {showModalWindowCreateHomework(openModalCreateHomework){
+        console.log('Prueba');
+    }}
 })
 
 
+
 export default class ListHomework extends VueWizard {
-    public openModalCreateHomework: boolean = true;
+
+    @Prop() readonly elementId!: string;
+
+    public openModalCreateHomework: boolean = false;
     public openModalEditHomework: boolean = false;
     public openModalDeleteHomework: boolean = false;
+    public EventBus: Vue = new Vue();
     public tasks: any[] = []
-
+    public modalVisible = false
     async mounted(): Promise<any> {
         await store.dispatch(storeTypes.tasks.actions.getAllTasks())
         .then((tasks: any) => {
@@ -34,7 +37,10 @@ export default class ListHomework extends VueWizard {
     }
 
     showModalWindowCreateHomework(){
-        this.openModalCreateHomework = !this.openModalCreateHomework;
+        console.log('object');
+        this.openModalCreateHomework = true
+        this.$emit('openModalCreateHomework')
+
     }
 
     showModalWindowEditHomework(){
@@ -44,5 +50,6 @@ export default class ListHomework extends VueWizard {
     showModalWindowDeleteHomework(){
         this.openModalDeleteHomework = !this.openModalDeleteHomework;
     }
-}
 
+
+}

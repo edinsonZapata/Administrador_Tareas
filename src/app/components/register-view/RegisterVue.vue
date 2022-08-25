@@ -23,7 +23,7 @@
                     class="form group p-2 mb-md-0 mr-md-1 onfirm-form-group p-3"
                   >
                     <label class="form-label">Nombre completo</label>
-                    <input type="text" class="form-control" id="nombre" />
+                    <input type="text" class="form-control" id="name" v-model="name" required/>
                   </div>
 
                   <div class="mb-3 col-sm-12">
@@ -42,20 +42,20 @@
                       </div>
                       <div class="form group p-3 col-sm-6">
                         <label class="form-label">Número de documento</label>
-                        <input type="text" class="form-control" id="cedula" />
+                        <input type="text" class="form-control" id="numDocument" v-model="numDocument" required/>
                       </div>
                     </div>
                   </div>
                   <div class="d-flex flex-column flex-md-row aling-items-end">
                     <div class="form group p-3 col-sm-6">
                       <label class="form-label">Correo electrónico</label>
-                      <input type="text" class="form-control" id="correo" />
+                      <input type="text" class="form-control" id="email" v-model="email" />
                     </div>
                     <div class="form group p-3 col-sm-6">
                       <label class="form-label"
                         >Confirmar correo electrónico</label
                       >
-                      <input type="text" class="form-control" id="correo" />
+                      <input type="text" class="form-control" id="confirmemail" v-model="confirmemail" />
                     </div>
                   </div>
                   <div class="mb-3">
@@ -65,7 +65,8 @@
                         <input
                           type="password"
                           class="form-control"
-                          id="contraseña"
+                          id="password"
+                          v-model="password"
                         />
                       </div>
                       <div class="form group p-3 col-sm-6">
@@ -73,7 +74,8 @@
                         <input
                           type="password"
                           class="form-control"
-                          id="conf-contraseña"
+                          id="confirmpass"
+                          v-model="confirmpass"
                         />
                       </div>
                     </div>

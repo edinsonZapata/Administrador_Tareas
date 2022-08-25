@@ -6,13 +6,16 @@ const AppLogin = () => import("../components/login-view/LoginVue.vue");
 
 const AppRegister = () => import("../components/register-view/RegisterVue.vue");
 
-const AdminMain = () => import("../components/home-page/HomePage.vue");
+const homePage = () => import("../components/home-page/HomePage.vue");
 
 const settingPage = () => import("../components/Settings/settingPage.vue");
 
-const AdminList = () => import("../components/list-homework-view/ListHomework.vue");
+const listHomework = () => import("../components/list-homework-view/ListHomework.vue");
 
-const Modals = () => import("../components/modals-vue/ModalsHomework.vue");
+const record = () => import("../components/record-Page/recordPage.vue");
+
+const modals = () => import("../components/modals/modals-view.vue");
+
 
 Vue.use(VueRouter);
 
@@ -34,14 +37,19 @@ const routes = [
     component:AppRegister
 },
 {
-    path:"/app",
+    path:"/homePage",
     name:"admin",
-    component:AdminMain
+    component:homePage
 },
 {
-    path:"/listhomework",
-    name:"list",
-    component: AdminList
+    path:"/listHomework",
+    name:"admin",
+    component: listHomework
+},
+{
+    path: "/record",
+    name: "admin",
+    component: record
 },
 {
     path:"/setting",
@@ -49,9 +57,9 @@ const routes = [
     component:settingPage
 },
 {
-    path:"/modals",
-    name:"modals",
-    component:Modals 
+    path:"/models",
+    name:"models",
+    component:modals
 }
 ] 
 

@@ -1,12 +1,23 @@
-import { Tasks } from "@/app/models/interfaces/tasks";
-export interface TasksState{
-    tasks: Tasks[],
+import { Users } from "@/app/models/interfaces/user";
+export interface UsersState{
+    users: Users[],
     totalPages: number,
+    loading: boolean,
+    login: {
+        email: string,
+        password: string
+    }
 }
 
-export type ExtendedTasksState = { tasks?: TasksState };
+export type ExtendedUsersState = { users?: UsersState };
+export const savedCredentials ="credentials:wizard";
 
-export const initialTasksState: TasksState = {
-    tasks: [],
-    totalPages: 0
+export const initialUsersState: UsersState = {
+    users: [],
+    totalPages: 0,
+    loading: false,
+    login: {
+        email: '',
+        password: ''
+    },
 }

@@ -1,5 +1,5 @@
 import { StatusTask } from "../../enums";
-import {User} from "./user";
+import {Users} from "./user";
 
 export interface Tasks{
     theme: string,
@@ -8,5 +8,5 @@ export interface Tasks{
     status: StatusTask,
     assessment: string,
     estimatedTime: Date,
-    managers: User[]
+    managers: Users[]
 }

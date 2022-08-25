@@ -88,29 +88,29 @@
             <ul class="nav flex-column">
               <li class="nav-item mb-4">
                 <a
-                  class="btn btn-toggle align-items-center rounded collapsed col-12 text-white active" 
-                ><icon :icon="['fas', 'fa-house']"/>
+                  class="btn btn-toggle justify-content-left rounded collapsed col-12 text-white active" 
+                ><icon :icon="['fas', 'fa-house']" class="" />
                   Pagina inicio
                 </a>
               </li>
               <li class="nav-item mb-4">
                 <a 
-                  class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white"  href="../list-homework"
-                ><icon icon="fa-solid fa-clipboard-list" class="mg-3"/>
+                  class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white"  href="../listHomework"
+                ><icon icon="fa-solid fa-clipboard-list" class=""/>
                   Lista de tareas
                 </a>
               </li>
               <li class="nav-item mb-4">
                 <a
                   class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white " href="record"
-                ><icon icon="fa-solid fa-business-time" />
+                ><icon icon="fa-solid fa-business-time" class="col-2" />
                   Historial
                 </a>
               </li>
               <li class="nav-item mb-4">
                 <a
                   class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white" href="../setting"
-                ><icon icon="fa-solid fa-gear" />
+                ><icon icon="fa-solid fa-gear" class="col-2"/>
                   Configuracion
                 </a>                
               </li>
@@ -158,20 +158,14 @@
                       <th>Estado</th>
                       <th>Editar</th>
                     </thead>
-                    <tbody class="">
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Usuario_1</td>
-                        <td></td>
+                    <tbody class="" >
+                      <tr v-for="(user, index) of users" :key="index">
+                        <th scope="row">{{user.role}}</th>
+                        <td>{{user.username}}</td>
+                        <td>{{user.state}}</td>
                         <td><button @click="showModalWindowEditUser " class="btn btn-primary "><icon :icon="['fas', 'fa-pen-to-square']"/> Editar</button>
                         </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Usuario_2</td>
-                        <td></td>
-                        <td><button @click="showModalWindowEditUser" class="btn btn-primary "><icon :icon="['fas', 'fa-pen-to-square']"/> Editar</button></td>
-                      </tr>
+                      </tr>                     
                     </tbody>
                   </table>
                 </div>

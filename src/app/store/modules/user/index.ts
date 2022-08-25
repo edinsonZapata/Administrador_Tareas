@@ -1,17 +1,17 @@
 import { Module } from "vuex";
 import { RootState } from "@/app/store/root.models";
-import mutations, { tasksMutationsTypes } from "./user.mutations";
-import actions, { tasksActionsActionsTypes } from "./user.actions";
-import { initialTasksState, TasksState } from './user.models';
+import mutations, { usersMutationsTypes } from "./user.mutations";
+import actions, { usersActionsActionsTypes } from "./user.actions";
+import { initialUsersState, UsersState } from './user.models';
 
-export const tasks: Module<TasksState, RootState> = {
+export const users: Module<UsersState, RootState> = {
     namespaced: false,
-    state: initialTasksState,
+    state: initialUsersState,
     mutations: mutations,
     actions: actions
 };
 
-export const tasksTypes = {
-    mutations: tasksMutationsTypes,
-    actions: tasksActionsActionsTypes,
+export const usersTypes = {
+    mutations: usersMutationsTypes,
+    actions: usersActionsActionsTypes,
 };

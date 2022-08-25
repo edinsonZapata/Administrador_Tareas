@@ -1,5 +1,4 @@
 <template>
-
     <div class="w-100 h-100 m-0 p-0 container-view-home">
         <div class="h-100">
             <nav class="d-flex navbar navbar-expand-lg container-view-nav">
@@ -28,33 +27,64 @@
                     </svg>
                 </div>
             </nav>
+            <!--Modal eliminar tarea-->
+            <div v-if="openModalDeleteHomework" class="modal fade show " style="padding-right: 17px; display:block" data-bs-backdrop="static"
+                data-bs-keyboard="false" arial-modal="true">
+                <div class="modal-dialog modal modal-dialog-centered">
+                    <div class="modal-content d-flex justify-content-center aling-items-center">
+                        <div class="modal-header bg-danger" style="height: 25px;">
+                            <div class="container-fluid my-4">
+                                
+                            </div>
+                         </div>
 
+                        <div class="modal-body m-2">
+                                <div class="container-fluid ">
+                                <h2>¿Está seguro que desea eliminar esta tarea?</h2>
+                                </div>
+                        </div>
 
+                        <div class="modal-footer justify-content-center aling-items-center m-2">
+                            <div class="col-5">
+                                <a href="../listhomework" type="submit" class="btn btn-danger col-lg-12 mr-4">
+                                    Eilminar
+                                </a>
+                            </div>
+                            <div class="col-5">
+                                <a @click="showModalWindowDeleteHomework" type="reset" class="btn btn-secondary col-lg-12 mr-2">
+                                    Cancelar
+                                </a>
+                        </div>
+                       
 
+                        </div>
+                    </div>
+                </div>
+            </div>                                           
             <div class="d-flex router-view-container">
                 <nav class="d-flex flex-column flex-shrink-0 p-3 col-md-3 col-lg-2 sticky-top container-view-home-nav">
                     <div class="sidebar-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item mb-4">
-                                <a class="btn btn-toggle align-items-center rounded collapsed col-12 text-white">
+                                <button class="btn btn-toggle align-items-center rounded collapsed col-12 text-white">
 
                                     Pagina inicio
-                                </a>
+                                </button>
                             </li>
                             <li class="nav-item mb-4">
-                                <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
+                                <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
                                     Lista de tareas
-                                </a>
+                                </buttom>
                             </li>
                             <li class="nav-item mb-4">
-                                <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
+                                <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
                                     Historial
-                                </a>
+                                </buttom>
                             </li>
                             <li class="nav-item mb-4">
-                                <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
+                                <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
                                     Configuracion
-                                </a>
+                                </buttom>
 
                             </li>
                             <li></li>
@@ -64,10 +94,12 @@
                 <main class="col-md-9 ml-sm-auto col-lg-10 px-md-5 main-manager">
                     <div class="d-flex mb-5">
                         <div class=" d-flex align-items-center col-8">
-                            <a href="../modals" @click="showModalWindowCreateHomework" type="button" class="btn btn-primary mx-0 p-4 h-50"
-                            >Crear Tarea</a>
-                        </div>
+                            <button @click="showModalWindowCreateHomework()" ref="btnShowModalCreateHomework" type="button" class="btn btn-primary mx-0 p-4 h-50"
+                            >Crear Tarea</button>
 
+                        </div>
+                        <modals :showModalWindowCreateHomework="showModalWindowCreateHomework" />
+    
                         <div class="col-4 m-3">
                             <div class="">
                                 <div class="card shadow-sm justify-content-center">
@@ -124,7 +156,7 @@
                             </thead>
                             <tbody>
                                 <tr class="table-light" v-for="(task, index) of tasks" :key="index">
-                                    <th scope="row">{{task.theme}} </th>
+                                    <th scope="row">{{task.theme}}</th>
                                     <td>{{task.description}}</td>
                                     <td>1</td>
                                     <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -140,18 +172,17 @@
                                     </td>
                                     <td>1</td>
                                     <td>Angel Portilla, Andrés Perdomo, Juliana Rodríguez</td>
-                                    <td><a @click="showModalWindowDeleteHomework" type="button" class="btn btn-danger">Eliminar</a></td>
+                                    <td><button @click="showModalWindowDeleteHomework" type="button" class="btn btn-danger">Eliminar</button></td>
                                     
-                                    <td><a @click="showModalWindowEditHomework" type="button" class="btn btn-outline-secondary"><svg
+                                    <td><button @click="showModalWindowEditHomework" type="button" class="btn btn-outline-secondary"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                 fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                 <path
                                                     d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                                 <path fill-rule="evenodd"
                                                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                            </svg></a></td>
+                                            </svg></button></td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>
@@ -160,13 +191,8 @@
         </div>
     </div>
 </template>
-
-<script src="../modals-vue/modalsHomework.ts" lang="ts">
-</script>
-
 <script src="./listHomework.ts" lang="ts">
 </script>
-
 <style scoped lang="scss" >
 @import "./listHomework-view.scss";
 </style>
