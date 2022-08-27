@@ -8,6 +8,16 @@ import $ from 'jquery';
 })
 
 export default class RecordPage extends VueWizard {
+    public openModalRefreshRecord: boolean = false;
+    public openModalCloseSesion: boolean = false;
+    showModalWindowCloseSesion(){
+        this.openModalCloseSesion = !this.openModalCloseSesion;
+    }
+
+    showModalWindowRefreshRecord(){
+        console.log("prueba")
+        this.openModalRefreshRecord = !this.openModalRefreshRecord;
+    }
    
     public records: any[] = []
 
