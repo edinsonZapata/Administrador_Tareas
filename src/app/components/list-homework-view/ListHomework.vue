@@ -1,4 +1,5 @@
 <template>
+    
     <div class="w-100 h-100 m-0 p-0 container-view-home">
         <div class="h-100">
             <nav class="d-flex navbar navbar-expand-lg container-view-nav">
@@ -66,26 +67,25 @@
                     <div class="sidebar-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item mb-4">
-                                <button class="btn btn-toggle align-items-center rounded collapsed col-12 text-white">
+                                <a class="btn btn-toggle align-items-center rounded collapsed col-12 text-white">
 
                                     Pagina inicio
-                                </button>
+                                </a>
                             </li>
                             <li class="nav-item mb-4">
-                                <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
+                                <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
                                     Lista de tareas
-                                </buttom>
+                                </a>
                             </li>
                             <li class="nav-item mb-4">
-                                <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
+                                <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
                                     Historial
-                                </buttom>
+                                </a>
                             </li>
                             <li class="nav-item mb-4">
-                                <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
+                                <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
                                     Configuracion
-                                </buttom>
-
+                                </a>
                             </li>
                             <li></li>
                         </ul>
@@ -93,13 +93,8 @@
                 </nav>
                 <main class="col-md-9 ml-sm-auto col-lg-10 px-md-5 main-manager">
                     <div class="d-flex mb-5">
-                        <div class=" d-flex align-items-center col-8">
-                            <button @click="showModalWindowCreateHomework()" ref="btnShowModalCreateHomework" type="button" class="btn btn-primary mx-0 p-4 h-50"
-                            >Crear Tarea</button>
-
-                        </div>
-                        <modals :showModalWindowCreateHomework="showModalWindowCreateHomework" />
-    
+                        <modalsnewTask class=" d-flex align-items-center col-8">                        
+                        </modalsnewTask>                              
                         <div class="col-4 m-3">
                             <div class="">
                                 <div class="card shadow-sm justify-content-center">
@@ -172,16 +167,8 @@
                                     </td>
                                     <td>1</td>
                                     <td>Angel Portilla, Andrés Perdomo, Juliana Rodríguez</td>
-                                    <td><button @click="showModalWindowDeleteHomework" type="button" class="btn btn-danger">Eliminar</button></td>
-                                    
-                                    <td><button @click="showModalWindowEditHomework" type="button" class="btn btn-outline-secondary"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                                fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                            </svg></button></td>
+                                    <td><button @click="showModalWindowDeleteHomework" type="button" class="btn btn-danger  mb-3">Eliminar</button></td>                                    
+                                    <td><modalseditTask></modalseditTask></td>
                                 </tr>
                             </tbody>
                         </table>

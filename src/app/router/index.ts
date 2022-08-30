@@ -14,8 +14,6 @@ const listHomework = () => import("../components/list-homework-view/ListHomework
 
 const record = () => import("../components/record-Page/recordPage.vue");
 
-const modals = () => import("../components/modals/modals-view.vue");
-
 
 Vue.use(VueRouter);
 
@@ -38,28 +36,23 @@ const routes = [
 },
 {
     path:"/homePage",
-    name:"admin",
+    name:"homePage",
     component:homePage
 },
 {
     path:"/listHomework",
-    name:"admin",
+    name:"listHomework",
     component: listHomework
 },
 {
     path: "/record",
-    name: "admin",
+    name: "record",
     component: record
 },
 {
     path:"/setting",
     name:"setting",
     component:settingPage
-},
-{
-    path:"/models",
-    name:"models",
-    component:modals
 }
 ] 
 

@@ -20,7 +20,15 @@
                 </div>
                 <div class="form group p-2">
                   <label class="form-label">Contraseña</label>
+                  <div class="input-group">
                   <input   @keyup="onInvalidCredentialsChange" v-model="password" id="password" :type="showPassword ? 'text' : 'password'" placeholder="Contraseña" class="form-control no-right-bordered" required />
+                  <div class="input-group-append">
+                     <span class="input-group-text pointer p-2" @click="toggleShowPassword">
+                       <icon v-if="showPassword" icon="eye" style="color: var(--main-gray)"/>
+                       <icon v-else icon="eye-slash" style="color: var(--main-gray)"/>
+                   </span> 
+                   </div>  
+                  </div>
                 </div>
                 <div class="form group d-flex aling-items-center justify-content-start p-2">
                   <input type="checkbox" class="form-check-input" id="" />
@@ -29,15 +37,14 @@
               </div>
                
               <div class="col-12 col-md-6 col-xl-8 p-4">
-                <button type="submit" class="btn btn-primary" v-if="!isLoading">
+                <a type="submit" class="btn btn-primary" v-if="!isLoading" href="../homePage">
                   Ingresar
-                </button>
+                </a>                
               </div>
               <div class="col h-100 aling-items-center justify-content-center text-center">
                 <p>
                   ¿No tienes una cuenta?
                   <br />
-
                   <a href="../register">Crear cuenta</a>
                 </p>
               </div>

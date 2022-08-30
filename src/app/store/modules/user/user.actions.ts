@@ -4,9 +4,10 @@ import { UsersState } from './user.models';
 import { usersMutationsTypes } from "./user.mutations";
 import { BASE_URL_MANAGER } from "@/config";
 import Axios, { AxiosRequestConfig } from "axios";
+import { Users } from "@/app/models/interfaces";
 
 export interface UsersActions{
-    registry: {name: string, tipDocument: string, numDocument: string, email: string, confirmemail: string, password: string, confirmpass: string },
+    registry: Users,
     login : {email: string; password: string},
     getAllUsers: undefined,
     //getInfoUsers: undefined,
@@ -22,6 +23,8 @@ export const usersActionsActionsTypes: DefineTypes<UsersActions> = {
 }
 
 const actions: DefineActions<UsersActions, UsersState, RootState> ={
+
+
     async registry({commit}): Promise<void>{
         try {
         const url = await Axios.post(`${BASE_URL_MANAGER}/user`)
@@ -33,7 +36,6 @@ const actions: DefineActions<UsersActions, UsersState, RootState> ={
             return new Promise((resolve, reject) => reject(err));
         }
     },
-
 
     async login({commit}, {payload}): Promise<void>{
         try {            

@@ -130,12 +130,13 @@
           <hr>
           <div class="row justify-content-center">
             <div class="col-6 m-3">
-              <div class="card shadow-sm">
+              <div class="card shadow-sm" v-for="(task, index) of tasks" :key="index">
                 <div class="card-header p-3">
                   <h5>Ultimas asignaciones</h5>
                 </div>
                 <div class="card-body">
-                  <p class="card-text">Descripcion:</p>
+                  <p class="card-text">Descripcion: </p>
+                  
                 </div>
                 <div class="card-body">
                   <p class="card-text">Encargados</p>
@@ -154,15 +155,13 @@
                   <table class="table m-0 justify-content-center">
                     <thead class="">
                       <th ># Usuarios</th>
-                      <th>Nombre</th>
-                      <th>Estado</th>
+                      <th>Nombre</th>                      
                       <th>Editar</th>
                     </thead>
                     <tbody class="" >
                       <tr v-for="(user, index) of users" :key="index">
-                        <th scope="row">{{user.role}}</th>
-                        <td>{{user.username}}</td>
-                        <td>{{user.state}}</td>
+                        <th scope="row">{{user.userRole}}</th>
+                        <td>{{user.name}}</td>                        
                         <td><button @click="showModalWindowEditUser " class="btn btn-primary "><icon :icon="['fas', 'fa-pen-to-square']"/> Editar</button>
                         </td>
                       </tr>                     
