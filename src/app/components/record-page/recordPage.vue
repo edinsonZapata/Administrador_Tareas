@@ -18,15 +18,14 @@
           <a class="navbar-brand text-white" href="">UsuarioAdmin</a>
         </div>
         <div action="" class="d-flex p-3">
-          <a class="navbar-brand text-white" @click="showModalWindowCloseSesion">cerrar sesion</a>
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-            class="bi bi-power mb-3 text-white" viewBox="0 0 16 16">
-            <path d="M7.5 1v7h1V1h-1z" />
-            <path
-              d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z" />
-          </svg>
-
+          <a @click="showModalWindowCloseSesion" class="navbar-brand text-white">Cerrar sesion
+            <icon :icon="['fas ', 'fa-door-open']" width="35" height="35" />
+          </a>
         </div>
+        <div>
+          <MyModal />
+        </div>
+
       </nav>
     </div>
     <div v-if="openModalCloseSesion" class="modal fade show" style="padding-right: 17px; display:block"
@@ -73,28 +72,33 @@
     <div class="d-flex router-view-container">
       <nav class="d-flex flex-column flex-shrink-0 p-3 col-md-3 col-lg-2 sticky-top container-view-home-nav">
         <div class="sidebar-sticky pt-3">
+
           <ul class="nav flex-column">
-            <li class=" nav-item mb-4">
-              <button class="btn btn-toggle align-items-center rounded collapsed col-12 text-white">
-                Inicio
-              </button>
+            <li class="nav-item mb-4">
+              <a class="btn btn-toggle align-items-center rounded collapsed col-12 text-white active">
+                <icon :icon="['fas', 'fa-house']" />
+                Pagina inicio
+              </a>
             </li>
-            <li class=" nav-item mb-4">
-              <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 m-10 text-white">
+
+            <li class="nav-item mb-4">
+              <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white" href="../list-homework">
+                <icon icon="fa-solid fa-clipboard-list" class="mg-3" />
                 Lista de tareas
-              </buttom>
-            </li>
-            <li class="nav-item mb-2">
-              <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
-                Historial
-              </buttom>
+              </a>
             </li>
             <li class="nav-item mb-4">
-              <buttom class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white">
-                Configuracion
-              </buttom>
+              <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white " href="record">
+                <icon icon="fa-solid fa-business-time" />
+                Historial
+              </a>
             </li>
-            <li></li>
+            <li class="nav-item mb-4">
+              <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white" href="../setting">
+                <icon icon="fa-solid fa-gear" />
+                Configuracion
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -126,108 +130,26 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="tabla" v-for="(record, index) of records" :key="index">
-                      <th scope="row">{{ record.theme }}</th>
-                      <td>{{ record.description }}</td>
-                      <td>{{ record.priority }}</td>
-                      <td>
+                    <tr>
+                        <th scope="row"></th>
+
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><button type="button" class=" buton1 btn btn-primary" @click="showModalWindowRefreshRecord"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                            <path
+                              d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                            <path fill-rule="evenodd"
+                              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                          </svg></button> </td>
+                  
 
 
-
-                      </td>
-                      <td></td>
-                      <td>5 horas</td>
-                      <td>JJuan Andres perdomo </td>
-                      <td> <button type="button" class=" buton1 btn btn-primary"
-                          @click="showModalWindowRefreshRecord"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                            height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                            <path
-                              d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                            <path fill-rule="evenodd"
-                              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                          </svg></button> </td>
-
-                    </tr>
-                    <tr>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td></td>
-                      <td><button type="button" class=" buton1 btn btn-dark"
-                          @click="showModalWindowRefreshRecord"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                            height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                            <path
-                              d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                            <path fill-rule="evenodd"
-                              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                          </svg></button> </td>
-                    </tr>
-                    <tr>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td> </td>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td> </td>
-                      <td></td>
-                      <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                            <path
-                              d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                            <path fill-rule="evenodd"
-                              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                          </svg></button> </td>
-                    </tr>
-                    <tr>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                            <path
-                              d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                            <path fill-rule="evenodd"
-                              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                          </svg></button> </td>
-                    </tr>
-                    <tr>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td></td>
-                      <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                            <path
-                              d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                            <path fill-rule="evenodd"
-                              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                          </svg></button> </td>
-                    </tr>
-                    <tr>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td></td>
-                      <th scope="row"></th>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                            <path
-                              d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                            <path fill-rule="evenodd"
-                              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                          </svg></button> </td>
 
 
                     </tr>
@@ -270,103 +192,16 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                              width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                              <path
-                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                              <path fill-rule="evenodd"
-                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                            </svg></button> </td>
+                        <td><button type="button" class=" buton1 btn btn-primary" @click="showModalWindowRefreshRecord"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                            <path
+                              d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                            <path fill-rule="evenodd"
+                              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                          </svg></button> </td>
 
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                              width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                              <path
-                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                              <path fill-rule="evenodd"
-                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                            </svg></button> </td>
-
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td> </td>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td> </td>
-                        <td></td>
-                        <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                              width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                              <path
-                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                              <path fill-rule="evenodd"
-                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                            </svg></button> </td>
-
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                              width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                              <path
-                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                              <path fill-rule="evenodd"
-                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                            </svg></button> </td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                              width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                              <path
-                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                              <path fill-rule="evenodd"
-                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                            </svg></button> </td>
-                      </tr>
-
-                      <tr>
-                        <th scope="row"></th>
-
-                        <td></td>
-                        <td></td>
-
-
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" class=" buton1 btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg"
-                              width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                              <path
-                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                              <path fill-rule="evenodd"
-                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                            </svg></button> </td>
-
-
-                      </tr>
+                     </tr>
                     </tbody>
                   </table>
                 </div>
