@@ -112,33 +112,36 @@
         <div class="container-fluid my-5 ">
           <h3>Historial</h3>
         </div>
-        <div class="col-12 m-3">
-          <div class="">
-            <div class="card shadow-sm">
-              <div class="card-header p-4">
-                <table class="table  table-striped  border-0">
-                  <thead class="text-white">
-                    <tr class="table-active">
-                      <th scope="col">Tema</th>
-                      <th scope="col">Descripcion</th>
-                      <th scope="col">Prioridad</th>
-                      <th scope="col">Estado</th>
-                      <th scope="col">Valoracion</th>
-                      <th scope="col">Tiempo Estimado</th>
-                      <th scope="col">Encargados</th>
-                      <th scope="col">Acciones</th>
-                    </tr>
-                  </thead>
+        <div class="row">
+          <div class="col-20 m-3">
+            <div class="">
+              <div class="card shadow-sm">
+                <div class="card-header p-4">
+                  <table class="table table-striped border-0">
+                    <thead class="text-white">
+                      <tr class=" table-active">
+                        <th scope="col">Tema</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Prioridad</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Valoracion</th>
+                        <th scope="col">Tiempo Estimado</th>
+                        <th scope="col">Encargados</th>
+                        <th scope="col">Acciones</th>
+                      </tr>
+
+                    </thead>
                   <tbody>
                     <tr>
-                        <th scope="row"></th>
-
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                      <tbody class="" >
+                      <tr v-for="(record, index) of records" :key="index">
+                        <th scope="row">{{record.Theme}}</th>
+                        <td>{{record.description}}</td>                        
+                        <td>{{record.priority}}</td>
+                        <td>{{record.status}}</td>
+                        <td>{{record.assessment}}</td>
+                        <td>{{record.estimatedTime}}</td>
+                        <td>{{record.managers}}</td>
                         <td><button type="button" class=" buton1 btn btn-primary" @click="showModalWindowRefreshRecord"><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-arrow-repeat" viewBox="0 0 16 16">
@@ -148,16 +151,15 @@
                               d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
                           </svg></button> </td>
                   
-
-
-
-
+                      </tr>                     
+                    </tbody>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
+        </div>
         </div>
         <div class="container-fluid my-3 ">
           <h3>Ultimos cambios</h3>
@@ -182,16 +184,17 @@
                       </tr>
 
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"></th>
-
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                  <tbody>
+                    <tr>
+                      <tbody class="" >
+                      <tr v-for="(record, index) of records" :key="index">
+                        <th scope="row">{{record.Theme}}</th>
+                        <td>{{record.description}}</td>                        
+                        <td>{{record.priority}}</td>
+                        <td>{{record.status}}</td>
+                        <td>{{record.assessment}}</td>
+                        <td>{{record.estimatedTime}}</td>
+                        <td>{{record.managers}}</td>
                         <td><button type="button" class=" buton1 btn btn-primary" @click="showModalWindowRefreshRecord"><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-arrow-repeat" viewBox="0 0 16 16">
@@ -200,10 +203,13 @@
                             <path fill-rule="evenodd"
                               d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
                           </svg></button> </td>
-
-                     </tr>
+                  
+                        </tr>                     
                     </tbody>
+                    </tr>
+                  </tbody>
                   </table>
+                  
                 </div>
               </div>
             </div>
