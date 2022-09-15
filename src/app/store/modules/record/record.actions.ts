@@ -22,7 +22,7 @@ const actions: DefineActions<RecordsActions, RecordsState, RootState> ={
             const url = `${BASE_URL_MANAGER}/tasks/consultAllRecord`;
 
             const res = await Axios.get(url);
-
+             console.log(url)
             if(res.data){
                 commit(recordMutationsTypes.setRecords(res.data))
             }
