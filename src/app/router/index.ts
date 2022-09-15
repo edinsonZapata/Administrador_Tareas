@@ -39,7 +39,7 @@ const routes = [
     component:AdminMain
 },
 {
-    path:"/listhomework",
+    path:"/list-homework",
     name:"admin",
     component: AdminList
 },

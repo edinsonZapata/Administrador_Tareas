@@ -19,7 +19,7 @@ const actions: DefineActions<RecordsActions, RecordsState, RootState> ={
     async getAllRecords({commit}){
         try{
             //const { projectId, bussinesStatus } = payload;
-            const url = `${BASE_URL_MANAGER}/records/consultAllRecord`;
+            const url = `${BASE_URL_MANAGER}/tasks/consultAllRecord`;
 
             const res = await Axios.get(url);
 
