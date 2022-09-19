@@ -18,20 +18,13 @@
                 </a>
               </div>
               <div class="row">
-                <div class="col-12 col-xl-15">
-                  <div
-                    class="form group p-2 mb-md-0 mr-md-1 onfirm-form-group p-3"
-                  >
-                    <label class="form-label">Nombre completo</label>
-                    <input type="text" class="form-control" id="name" v-model="users.name" required/>
-                  </div>
-
+                <div class="col-12 col-xl-15">                
                   <div class="mb-3 col-sm-12">
                     <div class="d-flex flex-column flex-md-row aling-items-end">
                       <div class="form group p-3 col-sm-6">
-                        <label class="form-label">Tipo de documento:</label>
+                        <label class="form-label" for="typeOfDocument">Tipo de documento:</label>
                         <div class="input-group">
-                          <select class="form-select form-control custom-select" v-model="users.typeDocument" required >
+                          <select class="form-select form-control custom-select" id="typeOfDocument" v-model="users.typeDocument" required >
                             <option v-if="!isTypeDocument" value="">Seleccione el tipo</option>
                              <option v-for="(documentType, index) in typeDocuments"
                               :value="documentType"
@@ -42,57 +35,55 @@
                         </div>
                       </div>
                      <div class="form group p-3 col-sm-6">
-                        <label for="documentNumber" class="form-label">Número de documento</label>
-                        <input  type="text" class="form-control" id="numberDocument" min="100000" v-model="users.numberDocument"  required/>
+                        <label for="numberDocument" class="form-label">Número de documento</label>
+                        <input  type="number" class="form-control hidden-arrows-number-input" id="numberDocument" min="100000" v-model="users.numberDocument" :disabled="!isTypeDocument"  required>
                       </div>
                     </div>
                   </div>
                   <div class="d-flex flex-column flex-md-row aling-items-end">
                     <div class="form group p-3 col-sm-6">
-                      <label class="form-label">Correo electrónico</label>
-                      <input type="text" class="form-control" id="email" v-model="users.email" required />
-                    </div>
+                      <label class="form-label">Nombre completo</label>
+                     <input type="text" class="form-control" id="name" v-model="users.name" required/>
+                   </div>
                     <div class="form group p-3 col-sm-6">
-                      <label class="form-label"
-                        >Confirmar correo electrónico</label
-                      >
-                      <input type="text" class="form-control" id="confirmemail" v-model="users.confemail" required />
+                      <label class="form-label">Correo electrónico</label>
+                      <input type="text" class="form-control"  id="email" v-model="users.email" required />
                     </div>
                   </div>
                   <div class="mb-3">
                     <div class="d-flex flex-column flex-md-row aling-items-end">
                       <div class="form group p-3 col-sm-6">
-                        <label class="form-label">Contraseña</label>
+                        <label for="password" class="form-label">Contraseña</label>
                         <div class="input-group ">
-                        <input
-                          type="password"
+                        <input                          
                           class="form-control"
+                          :type="showPassword ? 'text' : 'password'"  
                           :class="{'is-invalid': !isValidPassword}"
-                          :disabled="!isPassword"
                           id="password"
                           v-model="users.password" required
                         />
                         <div class="input-group-append">
-                           <span class="input-group-text pointer p-2" :class="{'invalid-input-append': !isValidPassword}" @click="toggleShowPassword">
+                          <span class="input-group-text pointer p-2" @click="toggleShowPassword">
                              <icon v-if="showPassword" icon="eye" style="color: var(--main-gray)"/>
                              <icon v-else icon="eye-slash" style="color: var(--main-gray)"/>
-                          </span>   
+                           </span>  
                         </div>
                        </div>
                       </div>
                       
                      <div class="form group p-3 col-sm-6">
-                        <label class="form-label">Confirmar contraseña</label>
+                        <label for="passwordConfirm" class="form-label">Confirmar contraseña</label>
                         <div class="input-group ">
-                        <input
-                          type="password"
+                        <input                     
                           class="form-control"
+                          minlength="8"
+                          :type="showConfirmationPassword ? 'text':'password'"
                           id="confirmpass"
                           v-model="users.confPassword"
                           :class="{'is-invalid': !equalPasswords}"
                           :disabled="!isPassword"
                           autocomplete="off" 
-                           required
+                          required
                         />              
                         <div class="input-group-append">       
                           <span class="input-group-text pointer p-2" :class="{'invalid-input-append': !equalPasswords}" @click="toggleShowConfirmationPassword">
@@ -103,6 +94,35 @@
                         </div>
                       </div>
                     </div>
+                    <small v-if="!isValidPassword" class="text-danger">
+                       La&nbsp;
+                    <b>
+                     <label for="password" class="mb-0">
+                     Contraseña
+                    </label>
+                    </b>&nbsp;
+                      debe contener al menos un número y una letra. Debe ser de mínimo
+                      <b>
+                      ocho
+                     </b>
+                      caractéres
+                   </small>
+                 <br v-if="!equalPasswords && !isValidPassword" />
+                <small v-if="!equalPasswords" class="text-danger">
+                  Los valores de los campos&nbsp;
+                  <b>
+                   <label for="password" class="mb-0">
+                      Contraseña
+                    </label>
+                   </b>&nbsp;
+                   y&nbsp;
+                   <b>
+                      <label for="passwordConfirm" class="mb-0">
+                        Confirmación de Contraseña
+                      </label>
+                     </b>&nbsp;
+                    deben ser iguales
+                </small>
                   </div>
                 </div>
                 <div
