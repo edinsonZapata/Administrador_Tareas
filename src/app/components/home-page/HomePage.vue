@@ -25,13 +25,15 @@
         </div>
         <div class="collapse navbar-collapse" id="">
           <img src="" alt="" />
-          <a class="navbar-brand text-white" href="">{{infoLoginUser}}</a>
+          <a class="navbar-brand text-white" href="">UsuarioAdmin</a>
         </div>
         <div action="" class="d-flex p-3">
           <a @click="showModalWindowCloseSesion"  class="navbar-brand text-white">Cerrar sesion
           <icon :icon="['fas ', 'fa-door-open']"  width="35" height="35"/></a>          
         </div>
-      
+        <div>
+          <MyModal/>
+        </div> 
       </nav>
       <!--  modal cerrar sesion  -->
       <div v-if="openModalCloseSesion" class="modal fade show" style="padding-right: 17px; display:block" data-bs-backdrop="static" data-bs-keyboard="false" arial-modal="true">
@@ -43,11 +45,37 @@
             </div>
             <div class="modal-body text-center row m-2">
               <div class="col-6 justify-content-center">
-                <a class="btn col-lg-12 btn-success mr-2" href="../login">Aceptar</a>  
+                <button class="btn col-lg-12 btn-success mr-2">Aceptar</button>  
               </div>
               <div class="col-6">
                 <button @click="showModalWindowCloseSesion" class="btn col-lg-12 btn-secondary mr-2 ">Volver</button>
               </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--modal editar usuario-->
+      <div v-if="editUser" class="d-flex modal fade show" style="padding-right: 17px; display:block" data-bs-backdrop="static" data-bs-keyboard="false" arial-modal="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content d-flex justify-content-center aling-items-center">
+            <div class="modal-header bg-dark ">
+              <h5 class="text-white">Editar perfil</h5>
+              <button @click="showModalWindowEditUser" type="button" class="btn-close text-white" aria-label="Close"></button>
+            </div>
+            <div class="modal-body m-2 ">
+              <p class="p-2">Nombre</p>
+              <input class="form-control  mr-2" type="text">
+              <p class="p-2">Contraseña</p>
+              <input class="form-control mr-2" type="text">
+              <p class="p-2">Estado</p>
+            </div>
+            <div class="modal-footer justify-content-center aling-items-center m-2">
+              <div class="col-5">
+                <button class="btn col-lg-12 btn-success mr-2">Aceptar</button>  
+              </div>
+              <div class="col-5">
+                <button @click="showModalWindowEditUser" class="btn col-lg-12 btn-secondary mr-2 ">Volver</button>
+              </div> 
             </div>
           </div>
         </div>
@@ -100,8 +128,8 @@
           </div>
           <hr>
           <div class="row justify-content-center">
-            <div class="col-6 m-3" v-for="(task, index) of tasks" :key="index">
-              <div class="card shadow-sm" >
+            <div class="col-6 m-3">
+              <div class="card shadow-sm" v-for="(task, index) of tasks" :key="index">
                 <div class="card-header p-3">
                   <h5>Ultimas asignaciones</h5>
                 </div>
@@ -130,10 +158,10 @@
                       <th>Editar</th>
                     </thead>
                     <tbody class="" >
-                      <tr v-for="(regis, index) of registry" :key="index" v-on:click="editUse(regis._id)">
-                        <th scope="row">{{regis.userRole}}</th>
-                        <td>{{regis.name}}</td>                        
-                        <td><modaleditUsers  ></modaleditUsers>
+                      <tr v-for="(user, index) of users" :key="index">
+                        <th scope="row">{{user.userRole}}</th>
+                        <td>{{user.name}}</td>                        
+                        <td><button @click="showModalWindowEditUser " class="btn btn-primary "><icon :icon="['fas', 'fa-pen-to-square']"/> Editar</button>
                         </td>
                       </tr>                     
                     </tbody>
@@ -143,12 +171,12 @@
             </div>
             <hr>
             <div class="col-10 m-3 p-3">
-              <div class="card">
+              <dvi class="card">
               <div class="card-header">Notificaciones</div>
               <div class="card-text w-50 h-50"></div>
-              </div>
+              </dvi>
             </div>
-            <!-- <el-tag v-permission="['']"></el-tag> -->
+            <el-tag v-permission="['']"></el-tag>
           </div>
           <div class=""></div>
         </main>

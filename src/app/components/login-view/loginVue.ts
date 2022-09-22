@@ -7,12 +7,11 @@ import  Axios  from "axios";
 import { BASE_URL_MANAGER } from "@/config";
 import { Users } from "@/app/models/interfaces";
 import Swal from "sweetalert2";
-import { users } from "@/app/store/modules/user";
 
 const  _ = require('lodash');
 
 @Component({
-    name: 'login-view'
+    name: 'login-view',
 })
 
 export default class LoginView extends VueWizard {
@@ -22,24 +21,24 @@ export default class LoginView extends VueWizard {
     public email = "";
     public password = "";
     public isDisable = false;
+    public isNoTopic = false;
     public isInvalid = false;
     public showPassword = false;
-    public remember = false;
 
     constructor(){
         super();
         this.nombreVariable = "holaaa";
     }
 
-    async mounted() {
+    // async mounted() {
 
-        store.commit(storeTypes.users.mutations.loadUsersInfo());
-        const userInfo = _.cloneDeep(store.state.registry?.registry);        
-        this.email = userInfo && userInfo.username ? userInfo.username : '';
-        this.password = userInfo && userInfo.password ? atob(userInfo.password): '';
-        this.remember = userInfo && userInfo.remember ? userInfo.remember: false;
-        console.log(this.email, this.password);
-    }
+    //     store.commit(storeTypes.users.mutations.loadUsersInfo());
+    //     const userInfo = _.cloneDeep(store.state.users?.users);        
+    //     this.email = userInfo && userInfo.username ? userInfo.username : '';
+    //     this.password = userInfo && userInfo.password ? atob(userInfo.password): '';
+
+    //     console.log(this.email, this.password);
+    // }
 
     fireResultAlert(title: string, icon: "success" | "error" | "warning" | "info" | "question" | undefined, html: string) {
         return Swal.fire({
@@ -53,17 +52,14 @@ export default class LoginView extends VueWizard {
         });
     }
 
-    userSubmit(): void {
-        store.dispatch(storeTypes.users.actions.login({ email: this.email, password: this.password, remember: this.remember}))     
-            .then( response =>{
-                console.log(response);            
-                this.$router.push('homePage');
-            })
-            .catch(async(error) => {
-                this.password = "";
-                this.isInvalid = true;                
-            });
-    }
+    // handleSubmit(): void {
+    //     console.log(this.email, this.password);
+    //     store.dispatch(storeTypes.users.actions.login({ email: this.email, password: this.password}))
+    //         .catch(() => {
+    //             this.password = "";
+    //             this.isInvalid = true
+    //         });
+    // }
 
     async loginSubmit(){
 
@@ -88,24 +84,19 @@ export default class LoginView extends VueWizard {
         });
     }
 
-    
-    home(){
-        this.$router.push('/homePage');
-    }
-
-
     get isLoading(): boolean {
-        return store.state.users!.loading  
+        return store.state.users!.loading
     }
 
-    onInvalidCredentialsChange():void {
+    onInvalidCredentialsChange(): void {
         if (this.isInvalid) {
             this.resetValidations();
         }
     }
 
     resetValidations() {
-        this.isDisable = false;     
+        this.isDisable = false;
+        this.isNoTopic = false;
         this.isInvalid = false;
     }
 

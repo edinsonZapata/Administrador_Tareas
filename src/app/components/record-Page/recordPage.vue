@@ -75,7 +75,7 @@
 
           <ul class="nav flex-column">
             <li class="nav-item mb-4">
-              <a class="btn btn-toggle align-items-center rounded collapsed col-12 text-white">
+              <a class="btn btn-toggle align-items-center rounded collapsed col-12 text-white active">
                 <icon :icon="['fas', 'fa-house']" />
                 Pagina inicio
               </a>
@@ -89,7 +89,7 @@
             </li>
             <li class="nav-item mb-4">
               <a class="btn btn-toggle alig-items-center rounded collapsed col-12 text-white " href="record">
-                <icon icon="fa-solid fa-business-time active" />
+                <icon icon="fa-solid fa-business-time" />
                 Historial
               </a>
             </li>

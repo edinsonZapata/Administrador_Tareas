@@ -1,6 +1,3 @@
-
-import { users } from '@/app/store/modules/user';
-
 <template>
   <div class="w-100 h-100 m-0 p-0">
     <div class="d-flex h-100 w-100 aling-items-center justify-content-center container-view-login">
@@ -8,7 +5,7 @@ import { users } from '@/app/store/modules/user';
         <div class="row container-fluid my-5 mx-4 mx-md-5">
           <form
             class="d-grid gap-4 g-3 h-100 form-holder d-xl-flex flex-xl-column justify-content-xl-between animate_animated animate_fadeIn container-view-login-camp"
-            @submit.stop.prevent="userSubmit">
+            @submit.stop.prevent="loginSubmit">
             <div class="row aling-items-center justify-content-center tp-3">
               <div class="col d-flex aling-items-center  justify-content-center">
                  <img
@@ -19,7 +16,7 @@ import { users } from '@/app/store/modules/user';
               <div class="col-12 col-xl-12 ">
                 <div class="form group p-2 aling-items-center">
                   <label class="form-label justify-content-center">Correo electronico</label>
-                  <input  type="text" id="email" placeholder="Correo electronico" class="form-control" @keyup="onInvalidCredentialsChange" v-model="email" required />
+                  <input  type="text" id="username" placeholder="Correo electronico" class="form-control" @keyup="onInvalidCredentialsChange" v-model="email" required />
                 </div>
                 <div class="form group p-2">
                   <label class="form-label">Contraseña</label>
@@ -35,14 +32,14 @@ import { users } from '@/app/store/modules/user';
                 </div>
                 <div class="form group d-flex aling-items-center justify-content-start p-2">
                   <input type="checkbox" class="form-check-input" id="" />
-                  <label id="remember" class="form-check-label">Recordar credenciales</label>
+                  <label for="" class="form-check-label">Recordar credenciales</label>
                 </div>
               </div>
                
               <div class="col-12 col-md-6 col-xl-8 p-4">
-                <button type="submit" class="btn btn-primary" v-if="!isLoading"  >
+                <a type="submit" class="btn btn-primary" v-if="!isLoading" href="../homePage">
                   Ingresar
-                </button>                
+                </a>                
               </div>
               <div class="col h-100 aling-items-center justify-content-center text-center">
                 <p>

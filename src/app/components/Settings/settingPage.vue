@@ -44,7 +44,10 @@
               d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"
             />
           </svg>
-        </div>        
+        </div>
+        <div>
+          <MyModal />
+        </div>
       </nav>
       <!--  modal cerrar sesion  -->
       <div
@@ -135,7 +138,7 @@
             <ul class="nav flex-column">
               <li class="nav-item mb-4">
                 <a
-                  class="btn btn-toggle align-items-center rounded collapsed col-12 text-white" href="../homePage"
+                  class="btn btn-toggle align-items-center rounded collapsed col-12 text-white" href="../app"
                 >
                   Pagina inicio
                 </a>

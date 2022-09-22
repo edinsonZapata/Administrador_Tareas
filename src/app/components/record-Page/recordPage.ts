@@ -4,7 +4,6 @@ import { store, storeTypes } from "@/app/store";
 import $ from 'jquery';
 import axios from "axios";
 import { BASE_URL_MANAGER } from "@/config";
-import { StatusTask } from "@/app/enums";
 @Component({
     name: 'record-page',
 })
@@ -12,9 +11,6 @@ import { StatusTask } from "@/app/enums";
 export default class RecordPage extends VueWizard {
     public openModalRefreshRecord: boolean = false;
     public openModalCloseSesion: boolean = false;
-    public tasks: any [] = [];
-
-
     showModalWindowCloseSesion(){
         this.openModalCloseSesion = !this.openModalCloseSesion;
     }
@@ -27,13 +23,13 @@ export default class RecordPage extends VueWizard {
     public records: any[] = []
 
     async mounted(): Promise<any> {
-        const status = "RESOLVED"
+        await axios.get(`${BASE_URL_MANAGER}/tasks/consultAllRecord`);
 
-        await store.dispatch(storeTypes.records.actions.getAllRecords(status))
-        .then((records: any) => {
-            if(store.state.records){
-                this.records = store.state.records?.records;
-            }
-        })
+        // await store.dispatch(storeTypes.record.actions.getAllRecords())
+        // .then((records: any) => {
+        //     if(store.state.record){
+        //         this.records = store.state.record?.records;
+        //     }
+        // })
     }
 }

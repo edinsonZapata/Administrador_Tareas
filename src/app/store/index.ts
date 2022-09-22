@@ -1,9 +1,8 @@
 import Vue from "vue";
 import Vuex, { StoreOptions } from "vuex";
 import { RootState } from "./root.models";
-import { tasks, tasksTypes } from './modules/tasks';
-import { users, registry, usersTypes } from './modules/user';
-import { records, recordsTypes } from "./modules/record";
+import {tasks, tasksTypes} from './modules/tasks';
+import {users, usersTypes} from './modules/user';
 
 Vue.use(Vuex);
 
@@ -11,9 +10,7 @@ const rootStore: StoreOptions<RootState> = {
     strict: true,
     modules: {
         tasks,
-        users,
-        registry,
-        records
+        users
     },
 };
 
@@ -23,8 +20,6 @@ export const storeTypes = {
     root: rootTypes,
     tasks: tasksTypes,
     users: usersTypes,
-    registry: usersTypes,
-    records: recordsTypes
 };
 
 export * from "./root.models";
