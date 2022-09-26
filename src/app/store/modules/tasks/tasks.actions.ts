@@ -39,7 +39,7 @@ const actions: DefineActions<TasksActions, TasksState, RootState> ={
             return new Promise((resolve,reject) => reject(err));
         }
 
-    }
+    },
 }
 
 export default actions;
